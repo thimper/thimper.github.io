@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="打开控制台  打开申请SSL申请界面  下载SSL 打开 安全（云盾）- CA证书  配置Nginx阿里很细心，把各种WEB服务器配置SSL就去，有例举，拿来便事">
+<meta name="description" content="打开控制台  打开申请SSL申请界面  下载SSL 打开 安全（云盾）- CA证书  配置Nginx阿里很细心，把各种WEB服务器配置SSL就去，有例举，拿来便事 1234567891011121314151617 server &amp;#123;     listen 443;     server_name localhost;     ssl on;     root html;     ind">
 <meta property="og:type" content="article">
 <meta property="og:title" content="申请阿里免费DV SSL">
 <meta property="og:url" content="http://www.thimper.com/2018/04/10/申请阿里免费DV-SSL/index.html">
 <meta property="og:site_name" content="Thimper : Think,Move,Persist">
-<meta property="og:description" content="打开控制台  打开申请SSL申请界面  下载SSL 打开 安全（云盾）- CA证书  配置Nginx阿里很细心，把各种WEB服务器配置SSL就去，有例举，拿来便事">
+<meta property="og:description" content="打开控制台  打开申请SSL申请界面  下载SSL 打开 安全（云盾）- CA证书  配置Nginx阿里很细心，把各种WEB服务器配置SSL就去，有例举，拿来便事 1234567891011121314151617 server &amp;#123;     listen 443;     server_name localhost;     ssl on;     root html;     ind">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.thimper.com/2018/04/10/申请阿里免费DV-SSL/ssl-1.png">
 <meta property="og:image" content="http://www.thimper.com/2018/04/10/申请阿里免费DV-SSL/ssl-2.png">
 <meta property="og:image" content="http://www.thimper.com/2018/04/10/申请阿里免费DV-SSL/ssl-3.png">
 <meta property="og:image" content="http://www.thimper.com/2018/04/10/申请阿里免费DV-SSL/ssl-4.png">
-<meta property="og:updated_time" content="2018-04-10T03:33:45.116Z">
+<meta property="og:updated_time" content="2018-04-10T03:41:36.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="申请阿里免费DV SSL">
-<meta name="twitter:description" content="打开控制台  打开申请SSL申请界面  下载SSL 打开 安全（云盾）- CA证书  配置Nginx阿里很细心，把各种WEB服务器配置SSL就去，有例举，拿来便事">
+<meta name="twitter:description" content="打开控制台  打开申请SSL申请界面  下载SSL 打开 安全（云盾）- CA证书  配置Nginx阿里很细心，把各种WEB服务器配置SSL就去，有例举，拿来便事 1234567891011121314151617 server &amp;#123;     listen 443;     server_name localhost;     ssl on;     root html;     ind">
 <meta name="twitter:image" content="http://www.thimper.com/2018/04/10/申请阿里免费DV-SSL/ssl-1.png">
 
 
@@ -313,6 +313,7 @@
 <li><h3 id="打开-安全（云盾）-CA证书"><a href="#打开-安全（云盾）-CA证书" class="headerlink" title="打开 安全（云盾）- CA证书"></a>打开 安全（云盾）- CA证书</h3><p><img src="/2018/04/10/申请阿里免费DV-SSL/ssl-3.png" alt="下载证"></p>
 </li>
 <li><h3 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h3><p>阿里很细心，把各种WEB服务器配置SSL就去，有例举，拿来便事<br><img src="/2018/04/10/申请阿里免费DV-SSL/ssl-4.png" alt="阿里域名控制台"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> server &#123;</span><br><span class="line">     listen 443;</span><br><span class="line">     server_name localhost;</span><br><span class="line">     ssl on;</span><br><span class="line">     root html;</span><br><span class="line">     index index.html index.htm;</span><br><span class="line">     ssl_certificate   cert/1523284635636.pem;</span><br><span class="line">     ssl_certificate_key  cert/1523284635636.key;</span><br><span class="line">     ssl_session_timeout 5m;</span><br><span class="line">     ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">     ssl_prefer_server_ciphers on;</span><br><span class="line">     location / &#123;</span><br><span class="line">         root html;</span><br><span class="line">         index index.html index.htm;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>

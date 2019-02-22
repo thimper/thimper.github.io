@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java,php,spring boot, 教程">
+  <meta name="keywords" content="php,">
 
 
 
@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="Apache 启动 启动/关闭 apache 服务sudo apachectl start/stop/restart 查看 apache 版本 sudo apachectl -v apache 安装路径 /private/etc/apache2   apache 配置文件 /private/etc/apache2/httpd.conf   apache 服务部署目录 /资源库/WebServer/">
+<meta name="keywords" content="php">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php安装">
+<meta property="og:title" content="Mac PHP安装">
 <meta property="og:url" content="http://www.thimper.com/2019/02/21/php安装/index.html">
 <meta property="og:site_name" content="Thimper : Think,Move,Persist">
+<meta property="og:description" content="Apache 启动 启动/关闭 apache 服务sudo apachectl start/stop/restart 查看 apache 版本 sudo apachectl -v apache 安装路径 /private/etc/apache2   apache 配置文件 /private/etc/apache2/httpd.conf   apache 服务部署目录 /资源库/WebServer/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-21T13:26:01.609Z">
+<meta property="og:updated_time" content="2019-02-22T03:16:47.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php安装">
+<meta name="twitter:title" content="Mac PHP安装">
+<meta name="twitter:description" content="Apache 启动 启动/关闭 apache 服务sudo apachectl start/stop/restart 查看 apache 版本 sudo apachectl -v apache 安装路径 /private/etc/apache2   apache 配置文件 /private/etc/apache2/httpd.conf   apache 服务部署目录 /资源库/WebServer/">
 
 
 
@@ -122,7 +126,7 @@
 
 
 
-  <title>php安装 | Thimper : Think,Move,Persist</title>
+  <title>Mac PHP安装 | Thimper : Think,Move,Persist</title>
   
 
 
@@ -276,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">php安装</h1>
+          <h1 class="post-title" itemprop="name headline">Mac PHP安装</h1>
         
 
         <div class="post-meta">
@@ -331,7 +335,26 @@
       
 
       
-        
+        <h1 id="Apache-启动"><a href="#Apache-启动" class="headerlink" title="Apache 启动"></a>Apache 启动</h1><ul>
+<li>启动/关闭 apache 服务<br><code>sudo apachectl start/stop/restart</code></li>
+<li>查看 apache 版本<br> <code>sudo apachectl -v</code></li>
+<li>apache 安装路径<blockquote>
+<p>/private/etc/apache2</p>
+</blockquote>
+</li>
+<li>apache 配置文件<blockquote>
+<p>/private/etc/apache2/httpd.conf</p>
+</blockquote>
+</li>
+<li>apache 服务部署目录<blockquote>
+<p>/资源库/WebServer/Documents/</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="PHP-配置"><a href="#PHP-配置" class="headerlink" title="PHP 配置"></a>PHP 配置</h1><ul>
+<li>apache 添加 php模块支持<br> 修改配置 <code>/private/etc/apache2/httpd.conf</code><br> 找到配置<br> <code>#LoadModule php5_module libexec/apache2/libphp5.so</code><br> 将前方的#删除</li>
+</ul>
+
       
     </div>
     
@@ -345,6 +368,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+        </div>
       
 
       
@@ -415,8 +444,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -453,7 +491,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -486,6 +524,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache-启动"><span class="nav-number">1.</span> <span class="nav-text">Apache 启动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP-配置"><span class="nav-number">2.</span> <span class="nav-text">PHP 配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

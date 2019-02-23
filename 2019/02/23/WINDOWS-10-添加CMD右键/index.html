@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="给windows 添加右键菜单CMD有时候需要方便在windows 特定文件夹中唤起CMD命令行，很方便  准备注册脚本123456789Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here] @=&amp;quot;在此处打开命令行&amp;quot">
+<meta name="description" content="给windows 添加右键菜单CMD有时候需要方便在windows 特定文件夹中唤起CMD命令行，很方便  准备注册脚本1234567891011Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here] @=&amp;quot;在此处打开命令行&amp;">
 <meta name="keywords" content="Windows10,CMD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WINDOWS 10 添加CMD右键">
 <meta property="og:url" content="http://www.thimper.com/2019/02/23/WINDOWS-10-添加CMD右键/index.html">
 <meta property="og:site_name" content="Thimper : Think,Move,Persist">
-<meta property="og:description" content="给windows 添加右键菜单CMD有时候需要方便在windows 特定文件夹中唤起CMD命令行，很方便  准备注册脚本123456789Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here] @=&amp;quot;在此处打开命令行&amp;quot">
+<meta property="og:description" content="给windows 添加右键菜单CMD有时候需要方便在windows 特定文件夹中唤起CMD命令行，很方便  准备注册脚本1234567891011Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here] @=&amp;quot;在此处打开命令行&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-23T06:59:50.195Z">
+<meta property="og:updated_time" content="2019-02-23T08:07:05.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WINDOWS 10 添加CMD右键">
-<meta name="twitter:description" content="给windows 添加右键菜单CMD有时候需要方便在windows 特定文件夹中唤起CMD命令行，很方便  准备注册脚本123456789Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here] @=&amp;quot;在此处打开命令行&amp;quot">
+<meta name="twitter:description" content="给windows 添加右键菜单CMD有时候需要方便在windows 特定文件夹中唤起CMD命令行，很方便  准备注册脚本1234567891011Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here] @=&amp;quot;在此处打开命令行&amp;">
 
 
 
@@ -359,7 +359,7 @@
       
         <h1 id="给windows-添加右键菜单CMD"><a href="#给windows-添加右键菜单CMD" class="headerlink" title="给windows 添加右键菜单CMD"></a>给windows 添加右键菜单CMD</h1><p>有时候需要方便在windows 特定文件夹中唤起CMD命令行，很方便</p>
 <ul>
-<li>准备注册脚本<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here] </span><br><span class="line">@=&quot;在此处打开命令行&quot;</span><br><span class="line">&quot;Icon&quot;=&quot;cmd.exe&quot;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here\command]</span><br><span class="line">@=&quot;\&quot;C:\\Windows\\System32\\cmd.exe\&quot;&quot; </span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\cmdPrompt]</span><br><span class="line">@=&quot;在此处打开命令行&quot;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\cmdPrompt\command]</span><br><span class="line"> @=&quot;\&quot;C:\\Windows\\System32\\cmd.exe\&quot; \&quot;cd %1\&quot;&quot;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\cmd_here]</span><br><span class="line">@=&quot;在此处打开命令行&quot;</span><br><span class="line">&quot;Icon&quot;=&quot;cmd.exe&quot;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\cmd_here\command]</span><br></pre></td></tr></table></figure>
+<li>准备注册脚本<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here] </span><br><span class="line">@=&quot;在此处打开命令行&quot;</span><br><span class="line">&quot;Icon&quot;=&quot;cmd.exe&quot;</span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here\command]</span><br><span class="line">@=&quot;\&quot;C:\\Windows\\System32\\cmd.exe\&quot;&quot; </span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\cmdPrompt]</span><br><span class="line">@=&quot;在此处打开命令行&quot;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\cmdPrompt\command]</span><br><span class="line">@=&quot;\&quot;C:\\Windows\\System32\\cmd.exe\&quot; \&quot;cd %1\&quot;&quot;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\cmd_here]</span><br><span class="line">@=&quot;在此处打开命令行&quot;</span><br><span class="line">&quot;Icon&quot;=&quot;cmd.exe&quot;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\cmd_here\command]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>把上面脚本保存为.reg 文件</p>

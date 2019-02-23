@@ -1,7 +1,10 @@
 ---
 title: Git 别名设置
 date: 2019-02-22 11:36:19
-tags: Git
+categories:
+    - Git
+tags: 
+    - Git
 ---
 
 # Git 常用别名设置 

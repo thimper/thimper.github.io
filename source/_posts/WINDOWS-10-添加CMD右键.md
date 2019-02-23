@@ -1,6 +1,8 @@
 ---
 title: WINDOWS 10 添加CMD右键
 date: 2019-02-23 14:38:51
+categories:
+   - Windows
 tags: 
    - Windows10
    - CMD

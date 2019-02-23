@@ -1,7 +1,10 @@
 ---
 title: Git 常用命令收集
 date: 2019-02-23 14:33:24
+categories:
+    - Git
 tags: Git
+
 ---
 # Git常用命令收集
 
@@ -20,5 +23,5 @@ tags: Git
 
 - git checkout -b branchname
   创建并切换到分支
-  
+
   

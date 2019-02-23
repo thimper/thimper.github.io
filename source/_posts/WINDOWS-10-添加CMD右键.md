@@ -13,13 +13,15 @@ tags:
 
 - 准备注册脚本
 ```
-Windows Registry Editor Version 5.00[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here] 
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here] 
 @="在此处打开命令行"
-"Icon"="cmd.exe"[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here\command]
+"Icon"="cmd.exe"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cmd_here\command]
 @="\"C:\\Windows\\System32\\cmd.exe\"" 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\cmdPrompt]
 @="在此处打开命令行"[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\cmdPrompt\command]
- @="\"C:\\Windows\\System32\\cmd.exe\" \"cd %1\""[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\cmd_here]
+@="\"C:\\Windows\\System32\\cmd.exe\" \"cd %1\""[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\cmd_here]
 @="在此处打开命令行"
 "Icon"="cmd.exe"[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\cmd_here\command]
 ```

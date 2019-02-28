@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,Anaconda,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Anaconda 使用指南参考文章: 致Python初学者：Anaconda入门使用指南Anaconda使用总结 概述很多学习python的初学者甚至学了有一段时间的人接触到anaconda或者其他虚拟环境工具时觉得无从下手, 其主要原因就是不明白这些工具究竟有什么用, 是用来做什么的, 为什么要这么做, 比如笔者一开始也是不明白为啥除了python之外我还需要这么一个东西, 他和python到底">
+<meta name="keywords" content="Python,Anaconda">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#39;anaconda完全手机入门&#39;">
+<meta property="og:url" content="http://www.thimper.com/2019/02/27/anaconda完全手机入门/index.html">
+<meta property="og:site_name" content="Thimper : Think,Move,Persist">
+<meta property="og:description" content="Anaconda 使用指南参考文章: 致Python初学者：Anaconda入门使用指南Anaconda使用总结 概述很多学习python的初学者甚至学了有一段时间的人接触到anaconda或者其他虚拟环境工具时觉得无从下手, 其主要原因就是不明白这些工具究竟有什么用, 是用来做什么的, 为什么要这么做, 比如笔者一开始也是不明白为啥除了python之外我还需要这么一个东西, 他和python到底">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3026741-5a10016d9cebf11d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/779/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3026741-c4fea7520ea7c810.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/802/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3026741-6ec93340fe2010dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="http://www.thimper.com/2019/02/27/anaconda完全手机入门/">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3026741-d09afc34a52b4903.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:updated_time" content="2019-02-27T03:31:08.994Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&#39;anaconda完全手机入门&#39;">
+<meta name="twitter:description" content="Anaconda 使用指南参考文章: 致Python初学者：Anaconda入门使用指南Anaconda使用总结 概述很多学习python的初学者甚至学了有一段时间的人接触到anaconda或者其他虚拟环境工具时觉得无从下手, 其主要原因就是不明白这些工具究竟有什么用, 是用来做什么的, 为什么要这么做, 比如笔者一开始也是不明白为啥除了python之外我还需要这么一个东西, 他和python到底">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3026741-5a10016d9cebf11d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/779/format/webp">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.thimper.com/2019/02/27/anaconda完全手机入门/">
+
+
+
+
+
+  <title>'anaconda完全手机入门' | Thimper : Think,Move,Persist</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1b5bacec6f9cefb04842324e21a833da";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Thimper : Think,Move,Persist</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.thimper.com/2019/02/27/anaconda完全手机入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Thimper">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Thimper : Think,Move,Persist">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">'anaconda完全手机入门'</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T11:27:53+08:00">
+                2019-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Anaconda 使用指南<br>参考文章:</p>
+<p>致Python初学者：Anaconda入门使用指南<br>Anaconda使用总结</p>
+<p>概述<br>很多学习python的初学者甚至学了有一段时间的人接触到anaconda或者其他虚拟环境工具时觉得无从下手, 其主要原因就是不明白这些工具究竟有什么用, 是用来做什么的, 为什么要这么做, 比如笔者一开始也是不明白为啥除了python之外我还需要这么一个东西, 他和python到底有啥联系和区别, 为啥能用来管理python.<br>在使用过之后我才逐渐发现其实anaconda等环境管理工具究竟在做啥, 以及为什么我们需要他们来管理我们的python环境<br>首先我们需要先去了解Anaconda诞生的目的.再去了解Anaconda的使用方法.<br>Python本身<br>首先我们需要从python本身说起, 从根源寻找问题, 我们在使用python语言编写程序之前需要下载一个python解释器, 这才是python的本体, 没了python解释器, 我们即使写了无比正确优雅的python脚本也没办法运行, 那这个解释器在哪呢.就在你安装python的地方,比如我的在C:\Users\Acring\AppData\Local\Programs\Python\Python36-32<br><img src="https://upload-images.jianshu.io/upload_images/3026741-5a10016d9cebf11d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/779/format/webp" alt><br>项目结构如上图,这里有我们很熟悉的python.exe, 也就是Python解释器<br>除此之外还有个很重要的东西, Lib, 也就是python包文件, 包括自带的包和第三方包<br><img src="https://upload-images.jianshu.io/upload_images/3026741-c4fea7520ea7c810.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/802/format/webp" alt><br>Lib文件夹<br>\</p>
+<p>Lib目录如上图, 这里有python自带的包, 如笔者常用的日志包logging, 异步包 concurrent, 而所有的第三方包都放在site-packages文件夹里面<br>了解了这些我们就对整个python环境有了大概的了解, 其实最关键的, 一个python环境中需要有一个解释器, 和一个包集合.<br>解释器<br>解释器根据python的版本大概分为2和3. python2和3之间无法互相兼容, 也就是说用python2语法写出来的脚本不一定能在python3的解释器中运行.<br>包集合<br>包集合中包含了自带的包和第三方包, 第三方包我们一般通过pip或者easy_install来下载, 当一个python环境中不包含这个包, 那么引用了这个包的程序不能在该python环境中运行.<br>比如说一个爬虫脚本用到了第三方的requests包,而另一台计算机是刚刚装好原始python的, 也就是说根本没有任何第三方包, 那么这个爬虫脚本是无法在另一台机器上运行的.<br>问题所在<br>python环境解释完了, 那么接下来就要说明这样的环境究竟产生哪些问题, 因为anaconda正式为了解决这些问题而诞生的</p>
+<p>到底该装 Python2 呢还是 Python3</p>
+<p>python2和python3在语法上是不兼容的, 那我的机器上应该装python2还是python3呢, 可能一开始选一个学习就好了, 但是如果你要开发的程序必须使用python2而不能使用python3,那这时候你就不得不再下载一个python2, 那这时候环境变量该设谁的目录呢, 如果还是切换环境变量岂不是很麻烦.</p>
+<p>包管理</p>
+<p>如果我在本地只有一个python环境那我所有程序用到的各种包都只能放到同一个环境中, 导致环境混乱, 另外当我将写好的程序放到另一电脑上运行时又会遇到缺少相关包, 需要自己手动一个个下载的情况, 实在是烦人, 要是能每个程序开发都选用不同的环境, 而开发好之后又能将该程序需要的环境(第三方包)都独立打包出来就好了.<br>Anaconda<br>那么接下来就到我们的anaconda上场了, 先让我们安装好Anaconda然后我再来告诉你如何用Anaconda一个个解决我们上面的问题吧.<br>下载<br>官网下载<br>推荐下载python3版本, 毕竟未来python2是要停止维护的.<br>安装<br>按照安装程序提示一步步安装就好了, 安装完成之后会多几个应用</p>
+<p>Anaconda Navigtor ：用于管理工具包和环境的图形用户界面，后续涉及的众多管理命令也可以在 Navigator 中手工实现。</p>
+<p>Jupyter notebook ：基于web的交互式计算环境，可以编辑易于人们阅读的文档，用于展示数据分析的过程。</p>
+<p>qtconsole ：一个可执行 IPython 的仿终端图形界面程序，相比 Python Shell 界面，qtconsole 可以直接显示代码生成的图形，实现多行代码输入执行，以及内置许多有用的功能和函数。</p>
+<p>spyder ：一个使用Python语言、跨平台的、科学运算集成开发环境。</p>
+<p>暂时先不用管, 了解一下就行了<br>配置环境变量<br>如果是windows的话需要去 控制面板\系统和安全\系统\高级系统设置\环境变量\用户变量\PATH 中添加 anaconda的安装目录的Scripts文件夹, 比如我的路径是D:\Software\Anaconda\Scripts, 看个人安装路径不同需要自己调整.<br>之后就可以打开命令行(最好用管理员模式打开) 输入 conda –version<br>如果输出conda 4.4.11之类的就说明环境变量设置成功了.<br>为了避免可能发生的错误, 我们在命令行输入conda upgrade –all 先把所有工具包进行升级<br>管理虚拟环境<br>接下来我们就可以用anaconda来创建我们一个个独立的python环境了.接下来的例子都是在命令行操作的,请打开你的命令行吧.<br>activate<br>activate 能将我们引入anaconda设定的虚拟环境中, 如果你后面什么参数都不加那么会进入anaconda自带的base环境,<br>你可以输入python试试, 这样会进入base环境的python解释器, 如果你把原来环境中的python环境去除掉会更能体会到, 这个时候在命令行中使用的已经不是你原来的python而是base环境下的python.而命令行前面也会多一个(base) 说明当前我们处于的是base环境下.</p>
+<p>activate</p>
+<p>创建自己的虚拟环境<br>我们当然不满足一个base环境, 我们应该为自己的程序安装单独的虚拟环境.<br>创建一个名称为learn的虚拟环境并指定python版本为3(这里conda会自动找3中最新的版本下载)<br>conda create -n learn python=3<br><img src="https://upload-images.jianshu.io/upload_images/3026741-6ec93340fe2010dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt></p>
+<p>于是我们就有了一个learn的虚拟环境, 接下来我们切换到这个环境, 一样还是用activae命令 后面加上要切换的环境名称<br>切换环境<br>activate learn</p>
+<p>如果忘记了名称我们可以先用<br>conda env list</p>
+<p>去查看所有的环境<br>现在的learn环境除了python自带的一些官方包之外是没有其他包的, 一个比较干净的环境我们可以试试<br>先输入python打开python解释器然后输入</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import requests</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>会报错找不到requests包, 很正常.接下来我们就要演示如何去安装requests包<br>exit()</p>
+<p>退出python解释器<br>安装第三方包<br>输入</p>
+<blockquote>
+<p>conda install requests</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>pip install requests</p>
+</blockquote>
+<p>来安装requests包.<br>安装完成之后我们再输入python进入解释器并import requests包, 这次一定就是成功的了.<br>卸载第三方包<br>那么怎么卸载一个包呢</p>
+<blockquote>
+<p>conda remove requests</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>pip uninstall requests</p>
+</blockquote>
+<p>就行啦.<br>查看环境包信息<br>要查看当前环境中所有安装了的包可以用<br>conda list </p>
+<p>导入导出环境<br>如果想要导出当前环境的包信息可以用</p>
+<blockquote>
+<p>conda env export &gt; environment.yaml</p>
+</blockquote>
+<p>将包信息存入yaml文件中.<br>当需要重新创建一个相同的虚拟环境时可以用<br>conda env create -f environment.yaml</p>
+<p>其实命令很简单对不对, 我把一些常用的在下面给出来, 相信自己多打两次就能记住</p>
+<p>activate  // 切换到base环境<br>activate learn // 切换到learn环境<br>conda create -n learn python=3  // 创建一个名为learn的环境并指定python版本为3(的最新版本)<br>conda env list // 列出conda管理的所有环境<br>conda list // 列出当前环境的所有包<br>conda install requests 安装requests包<br>conda remove requests 卸载requets包<br>conda remove -n learn –all // 删除learn环境及下属所有包<br>conda update requests 更新requests包<br>conda env export &gt; environment.yaml  // 导出当前环境的包信息<br>conda env create -f environment.yaml  // 用配置文件创建新的虚拟环境</p>
+<p>深入一下<br>或许你会觉得奇怪为啥anaconda能做这些事, 他的原理到底是什么, 我们来看看anaconda的安装目录</p>
+<p>image.png</p>
+<p>这里只截取了一部分, 但是我们和本文章最开头的python环境目录比较一下, 可以发现其实十分的相似, 其实这里就是base环境. 里面有着一个基本的python解释器, lLib里面也有base环境下的各种包文件.<br>那我们自己创建的环境去哪了呢, 我们可以看见一个envs, 这里就是我们自己创建的各种虚拟环境的入口, 点进去看看</p>
+<p>image.png</p>
+<p>可以发现我们之前创建的learn目录就在下面, 再点进去<br><img src="/2019/02/27/anaconda完全手机入门/" alt></p>
+<p>这不就是一个标准的python环境目录吗?</p>
+<p>这么一看, anaconda所谓的创建虚拟环境其实就是安装了一个真实的python环境, 只不过我们可以通过activate,conda等命令去随意的切换我们当前的python环境, 用不同版本的解释器和不同的包环境去运行python脚本.<br>与pycharm连接<br>在工作环境中我们会集成开发环境去编码, 这里推荐JB公司的pycharm, 而pycharm也能很方便的和anaconda的虚拟环境结合<br>在Setting =&gt; Project =&gt; Project Interpreter 里面修改 Project Interpreter , 点击齿轮标志再点击Add Local为你某个环境的python.exe解释器就行了</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3026741-d09afc34a52b4903.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt><br>比如你要在learn环境中编写程序, 那么就修改为D:\Software\Anaconda\envs\learn, 可以看到这时候下面的依赖包也变成了learn环境中的包了.接下来我们就可以在pycharm中愉快的编码了.</p>
+<p>image.png</p>
+<p>结语<br>现在你是不是发现用上anaconda就可以十分优雅简单的解决上面所提及的单个python环境所带来的弊端了呢, 而且也明白了其实这一切的实现并没有那么神奇.<br>当然anaconda除了包管理之外还在于其丰富数据分析包, 不过那就是另一个内容了, 我们先学会用anaconda去换一种方法管里自己的开发环境, 这已经是一个很大的进步了.</p>
+<p>转载：作者：AC手环<br>链接：<a href="https://www.jianshu.com/p/eaee1fadc1e9" target="_blank" rel="noopener">https://www.jianshu.com/p/eaee1fadc1e9</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Anaconda/" rel="tag"># Anaconda</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/27/CMD-命令/" rel="next" title="CMD 命令">
+                <i class="fa fa-chevron-left"></i> CMD 命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Thimper</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/thimper" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thimper</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

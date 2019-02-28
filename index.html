@@ -259,6 +259,691 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.thimper.com/2019/02/27/anaconda完全手机入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Thimper">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Thimper : Think,Move,Persist">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/27/anaconda完全手机入门/" itemprop="url">'anaconda完全手机入门'</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T11:27:53+08:00">
+                2019-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Anaconda 使用指南<br>参考文章:</p>
+<p>致Python初学者：Anaconda入门使用指南<br>Anaconda使用总结</p>
+<p>概述<br>很多学习python的初学者甚至学了有一段时间的人接触到anaconda或者其他虚拟环境工具时觉得无从下手, 其主要原因就是不明白这些工具究竟有什么用, 是用来做什么的, 为什么要这么做, 比如笔者一开始也是不明白为啥除了python之外我还需要这么一个东西, 他和python到底有啥联系和区别, 为啥能用来管理python.<br>在使用过之后我才逐渐发现其实anaconda等环境管理工具究竟在做啥, 以及为什么我们需要他们来管理我们的python环境<br>首先我们需要先去了解Anaconda诞生的目的.再去了解Anaconda的使用方法.<br>Python本身<br>首先我们需要从python本身说起, 从根源寻找问题, 我们在使用python语言编写程序之前需要下载一个python解释器, 这才是python的本体, 没了python解释器, 我们即使写了无比正确优雅的python脚本也没办法运行, 那这个解释器在哪呢.就在你安装python的地方,比如我的在C:\Users\Acring\AppData\Local\Programs\Python\Python36-32<br><img src="https://upload-images.jianshu.io/upload_images/3026741-5a10016d9cebf11d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/779/format/webp" alt><br>项目结构如上图,这里有我们很熟悉的python.exe, 也就是Python解释器<br>除此之外还有个很重要的东西, Lib, 也就是python包文件, 包括自带的包和第三方包<br><img src="https://upload-images.jianshu.io/upload_images/3026741-c4fea7520ea7c810.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/802/format/webp" alt><br>Lib文件夹<br>\</p>
+<p>Lib目录如上图, 这里有python自带的包, 如笔者常用的日志包logging, 异步包 concurrent, 而所有的第三方包都放在site-packages文件夹里面<br>了解了这些我们就对整个python环境有了大概的了解, 其实最关键的, 一个python环境中需要有一个解释器, 和一个包集合.<br>解释器<br>解释器根据python的版本大概分为2和3. python2和3之间无法互相兼容, 也就是说用python2语法写出来的脚本不一定能在python3的解释器中运行.<br>包集合<br>包集合中包含了自带的包和第三方包, 第三方包我们一般通过pip或者easy_install来下载, 当一个python环境中不包含这个包, 那么引用了这个包的程序不能在该python环境中运行.<br>比如说一个爬虫脚本用到了第三方的requests包,而另一台计算机是刚刚装好原始python的, 也就是说根本没有任何第三方包, 那么这个爬虫脚本是无法在另一台机器上运行的.<br>问题所在<br>python环境解释完了, 那么接下来就要说明这样的环境究竟产生哪些问题, 因为anaconda正式为了解决这些问题而诞生的</p>
+<p>到底该装 Python2 呢还是 Python3</p>
+<p>python2和python3在语法上是不兼容的, 那我的机器上应该装python2还是python3呢, 可能一开始选一个学习就好了, 但是如果你要开发的程序必须使用python2而不能使用python3,那这时候你就不得不再下载一个python2, 那这时候环境变量该设谁的目录呢, 如果还是切换环境变量岂不是很麻烦.</p>
+<p>包管理</p>
+<p>如果我在本地只有一个python环境那我所有程序用到的各种包都只能放到同一个环境中, 导致环境混乱, 另外当我将写好的程序放到另一电脑上运行时又会遇到缺少相关包, 需要自己手动一个个下载的情况, 实在是烦人, 要是能每个程序开发都选用不同的环境, 而开发好之后又能将该程序需要的环境(第三方包)都独立打包出来就好了.<br>Anaconda<br>那么接下来就到我们的anaconda上场了, 先让我们安装好Anaconda然后我再来告诉你如何用Anaconda一个个解决我们上面的问题吧.<br>下载<br>官网下载<br>推荐下载python3版本, 毕竟未来python2是要停止维护的.<br>安装<br>按照安装程序提示一步步安装就好了, 安装完成之后会多几个应用</p>
+<p>Anaconda Navigtor ：用于管理工具包和环境的图形用户界面，后续涉及的众多管理命令也可以在 Navigator 中手工实现。</p>
+<p>Jupyter notebook ：基于web的交互式计算环境，可以编辑易于人们阅读的文档，用于展示数据分析的过程。</p>
+<p>qtconsole ：一个可执行 IPython 的仿终端图形界面程序，相比 Python Shell 界面，qtconsole 可以直接显示代码生成的图形，实现多行代码输入执行，以及内置许多有用的功能和函数。</p>
+<p>spyder ：一个使用Python语言、跨平台的、科学运算集成开发环境。</p>
+<p>暂时先不用管, 了解一下就行了<br>配置环境变量<br>如果是windows的话需要去 控制面板\系统和安全\系统\高级系统设置\环境变量\用户变量\PATH 中添加 anaconda的安装目录的Scripts文件夹, 比如我的路径是D:\Software\Anaconda\Scripts, 看个人安装路径不同需要自己调整.<br>之后就可以打开命令行(最好用管理员模式打开) 输入 conda –version<br>如果输出conda 4.4.11之类的就说明环境变量设置成功了.<br>为了避免可能发生的错误, 我们在命令行输入conda upgrade –all 先把所有工具包进行升级<br>管理虚拟环境<br>接下来我们就可以用anaconda来创建我们一个个独立的python环境了.接下来的例子都是在命令行操作的,请打开你的命令行吧.<br>activate<br>activate 能将我们引入anaconda设定的虚拟环境中, 如果你后面什么参数都不加那么会进入anaconda自带的base环境,<br>你可以输入python试试, 这样会进入base环境的python解释器, 如果你把原来环境中的python环境去除掉会更能体会到, 这个时候在命令行中使用的已经不是你原来的python而是base环境下的python.而命令行前面也会多一个(base) 说明当前我们处于的是base环境下.</p>
+<p>activate</p>
+<p>创建自己的虚拟环境<br>我们当然不满足一个base环境, 我们应该为自己的程序安装单独的虚拟环境.<br>创建一个名称为learn的虚拟环境并指定python版本为3(这里conda会自动找3中最新的版本下载)<br>conda create -n learn python=3<br><img src="https://upload-images.jianshu.io/upload_images/3026741-6ec93340fe2010dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt></p>
+<p>于是我们就有了一个learn的虚拟环境, 接下来我们切换到这个环境, 一样还是用activae命令 后面加上要切换的环境名称<br>切换环境<br>activate learn</p>
+<p>如果忘记了名称我们可以先用<br>conda env list</p>
+<p>去查看所有的环境<br>现在的learn环境除了python自带的一些官方包之外是没有其他包的, 一个比较干净的环境我们可以试试<br>先输入python打开python解释器然后输入</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import requests</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>会报错找不到requests包, 很正常.接下来我们就要演示如何去安装requests包<br>exit()</p>
+<p>退出python解释器<br>安装第三方包<br>输入</p>
+<blockquote>
+<p>conda install requests</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>pip install requests</p>
+</blockquote>
+<p>来安装requests包.<br>安装完成之后我们再输入python进入解释器并import requests包, 这次一定就是成功的了.<br>卸载第三方包<br>那么怎么卸载一个包呢</p>
+<blockquote>
+<p>conda remove requests</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>pip uninstall requests</p>
+</blockquote>
+<p>就行啦.<br>查看环境包信息<br>要查看当前环境中所有安装了的包可以用<br>conda list </p>
+<p>导入导出环境<br>如果想要导出当前环境的包信息可以用</p>
+<blockquote>
+<p>conda env export &gt; environment.yaml</p>
+</blockquote>
+<p>将包信息存入yaml文件中.<br>当需要重新创建一个相同的虚拟环境时可以用<br>conda env create -f environment.yaml</p>
+<p>其实命令很简单对不对, 我把一些常用的在下面给出来, 相信自己多打两次就能记住</p>
+<p>activate  // 切换到base环境<br>activate learn // 切换到learn环境<br>conda create -n learn python=3  // 创建一个名为learn的环境并指定python版本为3(的最新版本)<br>conda env list // 列出conda管理的所有环境<br>conda list // 列出当前环境的所有包<br>conda install requests 安装requests包<br>conda remove requests 卸载requets包<br>conda remove -n learn –all // 删除learn环境及下属所有包<br>conda update requests 更新requests包<br>conda env export &gt; environment.yaml  // 导出当前环境的包信息<br>conda env create -f environment.yaml  // 用配置文件创建新的虚拟环境</p>
+<p>深入一下<br>或许你会觉得奇怪为啥anaconda能做这些事, 他的原理到底是什么, 我们来看看anaconda的安装目录</p>
+<p>image.png</p>
+<p>这里只截取了一部分, 但是我们和本文章最开头的python环境目录比较一下, 可以发现其实十分的相似, 其实这里就是base环境. 里面有着一个基本的python解释器, lLib里面也有base环境下的各种包文件.<br>那我们自己创建的环境去哪了呢, 我们可以看见一个envs, 这里就是我们自己创建的各种虚拟环境的入口, 点进去看看</p>
+<p>image.png</p>
+<p>可以发现我们之前创建的learn目录就在下面, 再点进去<br><img src="/2019/02/27/anaconda完全手机入门/" alt></p>
+<p>这不就是一个标准的python环境目录吗?</p>
+<p>这么一看, anaconda所谓的创建虚拟环境其实就是安装了一个真实的python环境, 只不过我们可以通过activate,conda等命令去随意的切换我们当前的python环境, 用不同版本的解释器和不同的包环境去运行python脚本.<br>与pycharm连接<br>在工作环境中我们会集成开发环境去编码, 这里推荐JB公司的pycharm, 而pycharm也能很方便的和anaconda的虚拟环境结合<br>在Setting =&gt; Project =&gt; Project Interpreter 里面修改 Project Interpreter , 点击齿轮标志再点击Add Local为你某个环境的python.exe解释器就行了</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3026741-d09afc34a52b4903.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt><br>比如你要在learn环境中编写程序, 那么就修改为D:\Software\Anaconda\envs\learn, 可以看到这时候下面的依赖包也变成了learn环境中的包了.接下来我们就可以在pycharm中愉快的编码了.</p>
+<p>image.png</p>
+<p>结语<br>现在你是不是发现用上anaconda就可以十分优雅简单的解决上面所提及的单个python环境所带来的弊端了呢, 而且也明白了其实这一切的实现并没有那么神奇.<br>当然anaconda除了包管理之外还在于其丰富数据分析包, 不过那就是另一个内容了, 我们先学会用anaconda去换一种方法管里自己的开发环境, 这已经是一个很大的进步了.</p>
+<p>转载：作者：AC手环<br>链接：<a href="https://www.jianshu.com/p/eaee1fadc1e9" target="_blank" rel="noopener">https://www.jianshu.com/p/eaee1fadc1e9</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.thimper.com/2019/02/27/CMD-命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Thimper">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Thimper : Think,Move,Persist">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/27/CMD-命令/" itemprop="url">CMD 命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T10:54:52+08:00">
+                2019-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="dir-命令"><a href="#dir-命令" class="headerlink" title="dir 命令"></a>dir 命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dir/a 显示所有隐藏文件夹和文件</span><br><span class="line">dir/ah 显示隐藏的文件夹和文件</span><br><span class="line">dir/ad 显示隐藏的文件夹</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.thimper.com/2019/02/27/Python-常用常识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Thimper">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Thimper : Think,Move,Persist">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/27/Python-常用常识/" itemprop="url">Python 常用常识</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T10:52:01+08:00">
+                2019-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Python-requirements-生成与安装"><a href="#Python-requirements-生成与安装" class="headerlink" title="Python requirements 生成与安装"></a>Python requirements 生成与安装</h2><p>  requirements生成<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure></p>
+<p>  安装requirements.txt依赖<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.thimper.com/2019/02/26/BootStrap-模板收藏/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Thimper">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Thimper : Think,Move,Persist">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/26/BootStrap-模板收藏/" itemprop="url">BootStrap 模板收藏</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T15:09:23+08:00">
+                2019-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>Coming Soon</li>
+</ol>
+<p>Coming Soon是一个Bootstrap 4为主题的网站模板，特别适用于着陆页的设计。该模板带有移动后备图像的视频背景，社交图标和Newsletter注册通道。该模板完全免费，且适应所有主流浏览器和平台。</p>
+<p>Coming Soon网站模板</p>
+<p><img src="https://camo.githubusercontent.com/04775cda09cf81f5423ce4fea3fbe6f394461110/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f636f6d696e672d736f6f6e2e706e67" alt></p>
+<p><a href="https://github.com/BlackrockDigital/startbootstrap-coming-soon/archive/gh-pages.zip" target="_blank" rel="noopener">https://github.com/BlackrockDigital/startbootstrap-coming-soon/archive/gh-pages.zip</a></p>
+<ol start="2">
+<li>Creative</li>
+</ol>
+<p>Creative是一个响应式小型企业网站设计的bootstrap模板。该模板是一个轻量级的单页模板，具有麻省理工学院许可证。该模板具有自定义导航菜单、滚动动画、自定义按钮样式、丰富插件等等。</p>
+<p>Creative网站模板<br><img src="https://camo.githubusercontent.com/208b18c3ae429c0655b9fd86444b29b0ebc0213b/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f63726561746976652e706e67" alt><br><a href="https://github.com/BlackrockDigital/startbootstrap-creative/archive/gh-pages.zip" target="_blank" rel="noopener">https://github.com/BlackrockDigital/startbootstrap-creative/archive/gh-pages.zip</a></p>
+<ol start="3">
+<li>Resume</li>
+</ol>
+<p>Resume如其名字所示，是一个适用于个人简历/网站设计的bootstrap 4网站模板。该模板简洁、优雅，非常具有设计感，带有滚动页面锚点的固定侧面导航，并且是完全响应式的，使用它来搭建个人网站，可以让你的访客眼前一亮。</p>
+<p>Resume网站模板<br><img src="https://camo.githubusercontent.com/27dab02e5e5a5db51fa52a0719e35a466c9109e7/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f726573756d652e706e67" alt><br>免费下载：https：//github.com/BlackrockDigital/startbootstrap-resume/archive/gh-pages.zip</p>
+<ol start="4">
+<li>Clean blog</li>
+</ol>
+<p>Clean blog是一个干净简洁的Bootstrap博客主题网站模板。该模板有4个HTML页面，包括博客索引，关于页面，示例博文和联系页面。具有现代设计，带有易于定制的色彩，还提供了免费博客文本，优化了向上滚动时显示菜单栏界面的设计，提高易读性。该模板还提供了社交链接和版权信息。</p>
+<p>Clean blog网站博客<br><img src="https://camo.githubusercontent.com/ee9d9ab30ec743515d869feaaa4bfb672ca7c75d/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f636c65616e2d626c6f672e706e67" alt><br>免费下载：</p>
+<p><a href="https://github.com/BlackrockDigital/startbootstrap-clean-blog/archive/gh-pages.zip" target="_blank" rel="noopener">https://github.com/BlackrockDigital/startbootstrap-clean-blog/archive/gh-pages.zip</a></p>
+<ol start="5">
+<li>Stylish Portfolio</li>
+</ol>
+<p>Stylish Portfolio是一款时尚的单页Bootstrap作品集网站模板，带有画布导航和流畅的页面滚动功能，用户体验极佳。该模板的自定义设计非常人性化，你可以根据需要自己设计，它具有两种自定义按钮样式，带有Font Awesome图标和作品集设计的图像网格等。</p>
+<p>Stylish Portfolio网站模板<br><img src="https://camo.githubusercontent.com/3b8f9f5b073f742ba6c21b137ad60e78078217e8/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f7374796c6973682d706f7274666f6c696f2e706e67" alt><br>免费下载：</p>
+<p><a href="https://github.com/BlackrockDigital/startbootstrap.." target="_blank" rel="noopener">https://github.com/BlackrockDigital/startbootstrap..</a>.</p>
+<ol start="6">
+<li>Modern Business</li>
+</ol>
+<p>Modern Business一个多用途的完整网站模板框架，用于构建Bootstrap 4网站，它包含17个HTML页面和1个可用的PHP联系表单。页面包含: 4个作品集展示页面、定价表，侧栏页面，FAQ页面，404页面和空白全宽页面等。你还可以自定义CTA以及其他界面布局和界面元素。</p>
+<p>Modern Business网站模板</p>
+<p>免费下载：</p>
+<p>https：//github.com/BlackrockDigital/startbootstrap-modern-business/archive/gh-pages.zip</p>
+<ol start="7">
+<li>Groovin</li>
+</ol>
+<p>Groovin是一个基于HTML 5的完全响应式的网站模板，发布于2018年7月10日，可适用于多种类型的网站搭建。该模板是一个单页的网站模板，但内容丰富，包含4个栏目分类，该模板作者具有专业的认定许可。</p>
+<p>智能标注、一键切图、交互原型，摹客iDoc一次搞定</p>
+<p>立即体验</p>
+<p>Groovin网站模板</p>
+<p><a href="https://www.free-css.com/assets/files/free-css-templates/download/page230/groovin.zip" target="_blank" rel="noopener">https://www.free-css.com/assets/files/free-css-templates/download/page230/groovin.zip</a></p>
+<p><a href="https://www.free-css.com/free-css-templates/page23.." target="_blank" rel="noopener">https://www.free-css.com/free-css-templates/page23..</a>.</p>
+<ol start="8">
+<li>Charity</li>
+</ol>
+<p>该模板发布日期为2018年6月，是一个比较新的模板。如果你计划创建一个非盈利组织的网站，那么Charity会是一个不错的选择。这是一个免费的HTML网站模板，现代，干净，易于使用且高度适应各种浏览器，你可以快速，轻松地构建筹款、照片墙、博客等页面。</p>
+<p>Charity网站模板</p>
+<p><a href="https://colorlib.com/download/1230/" target="_blank" rel="noopener">https://colorlib.com/download/1230/</a></p>
+<ol start="9">
+<li>Sublime</li>
+</ol>
+<p>Sublime发行于2018年5月，具有专业许可证：CC BY 3.0。该模板是一个免费的最小量的电子商务网站模板，你可以在这里建立自己的商铺，比如销售小工具，家具，服装，配饰等，该模板都非常适合。使用该模板建立在线商店，能提供给用户的很棒的体验，相信使用更该模板，发布后不久就你就会迎来首批订单。</p>
+<p> Sublime网站模板</p>
+<p><a href="https://colorlib.com/download/1122/" target="_blank" rel="noopener">https://colorlib.com/download/1122/</a></p>
+<ol start="10">
+<li>Royal</li>
+</ol>
+<p>Royal是一个自带预订表格的免费Bootstrap酒店设计网站模板。该模板是完全基于功能强大且流行的Bootstrap框架建立的，完全响应式。该模板自定义功能强大，使用和修改都很简单。该模板最大的优点是有方便预订联系的表格，可以很好地吸引用户，将他们引入你的网站，以便潜在客户快速采取行动。</p>
+<p>Royal网站模板</p>
+<p><a href="https://themewagon.com/themes/free-bootstrap-hotel-template/" target="_blank" rel="noopener">https://themewagon.com/themes/free-bootstrap-hotel-template/</a></p>
+<ol start="11">
+<li>Unapp</li>
+</ol>
+<p>Unapp是一个免费的商业应用程序网站模板，你可以将你的大项目在这里与大众分享。该模板发布于2018年6月，紧跟最新技术和设计，是开始你商业计划一个不错的选择。要真正做出成功的产品，创建一个网站是必要的过程。该模板还有一个专门的博客板块，用于进行内容营销，甚至可以通过在线商店扩展你的网站。</p>
+<p>Unapp网站模板</p>
+<p><a href="https://colorlib.com/download/1059/" target="_blank" rel="noopener">https://colorlib.com/download/1059/</a></p>
+<ol start="12">
+<li>Essence</li>
+</ol>
+<p>Essence是一个简洁干净的电子商务网站模板。最适合销售男女时装，配饰，箱包，鞋子，眼镜等时尚单品。如果你是要建立一个自己的网上商店，可以看看这个模板。该模板设计用心，从超级精美的主页到商店、产品和结账，可以为你的顾客提供绝佳的购物体验。</p>
+<p>Essence网站模板</p>
+<p><a href="https://colorlib.com/download/1023/" target="_blank" rel="noopener">https://colorlib.com/download/1023/</a></p>
+<ol start="13">
+<li>Personal</li>
+</ol>
+<p>Personal是一个免费的个人作品集展示网站模板，特别适合那些想要更多东西的创意人才使用。它基于流行的Bootstrap框架搭建，最大限度的确保了网站的灵活性和稳定性。该模板具有个性化的功能，有动画统计数据，设计精妙的作品集展示、推荐书滑块和定价表，还有不错的博客页面。</p>
+<p>Personal网站模板</p>
+<p><a href="https://colorlib.com/download/997/" target="_blank" rel="noopener">https://colorlib.com/download/997/</a></p>
+<ol start="14">
+<li>Stuff</li>
+</ol>
+<p>Stuff是一个免费的HTML5多页面网站模板，如果你想要建立一个以内容为中心的Bootstrap博客主题网站，那么该模板会是不错的选择。该模板设计者很关注细节，文字和视觉效果都做到最优，你的博客可以以干净，直接的方式在线显示，你的读者一定会喜欢。</p>
+<p>Stuff网站模板</p>
+<p><a href="https://colorlib.com/download/885/" target="_blank" rel="noopener">https://colorlib.com/download/885/</a></p>
+<ol start="15">
+<li>Sierra</li>
+</ol>
+<p>Sierra是一个免费的Bootstrap网站模板，发布于2018年3月。该模板适用于小型企业建立自己的网站，可以为你的产品和项目提供支持。该模板也是完全自适应的，做了不错的优化工作，跨浏览器。提升加载速度，具有一流的性能和不错的用户体验。</p>
+<p> Sierra网站模板</p>
+<p><a href="https://colorlib.com/download/755/" target="_blank" rel="noopener">https://colorlib.com/download/755/</a></p>
+<ol start="16">
+<li>Sonar</li>
+</ol>
+<p>Sonar是一个自定义的免费HTML5摄影网站模板。该模板是基于Bootstrap 4，具有规范的设计和精美的图片，是一个看起来非常美观的网站。</p>
+<p>Sonar网站模板</p>
+<p><a href="https://themewagon.com/themes/free-html5-photograp.." target="_blank" rel="noopener">https://themewagon.com/themes/free-html5-photograp..</a>.</p>
+<ol start="17">
+<li>Ezuca</li>
+</ol>
+<p>Ezuca是一个非常具有现代感的免费HTML5教育网站模板，该模板也是完全免费的。该模板最大的特色就是不像平常的教育网站那么正式，它是具有现代感的，很时尚。</p>
+<p>Ezuca网站模板</p>
+<p><a href="https://themewagon.com/themes/free-html5-education-template/" target="_blank" rel="noopener">https://themewagon.com/themes/free-html5-education-template/</a></p>
+<ol start="18">
+<li>Original</li>
+</ol>
+<p>Original是一个轻量级的免费的HTML5 博客网站模板。该模板框架精美，设计新颖，你可以使用它建立一个美观与功能俱佳的网站。</p>
+<p>Original网站模板</p>
+<p><a href="https://themewagon.com/themes/free-bootstrap-blog-website-template/" target="_blank" rel="noopener">https://themewagon.com/themes/free-bootstrap-blog-website-template/</a></p>
+<ol start="19">
+<li>Sports</li>
+</ol>
+<p>Sports是一个免费的HTML5 Bootstrap运动类型的网站模板。从远古时代起，人们就会通过不同类型的游戏来娱乐，运动类的网站一定要具有吸引力，才可以成功吸引用户。Sports不仅是一款免费的Bootstrap运动模板，也适用于多功能游戏网站，提供有关游戏和体育的必要信息。</p>
+<p>Sports网站模板</p>
+<p><a href="https://themewagon.com/themes/multi-page-free-bootstrap-sports-template/" target="_blank" rel="noopener">https://themewagon.com/themes/multi-page-free-bootstrap-sports-template/</a></p>
+<ol start="20">
+<li>Wedding</li>
+</ol>
+<p>Wedding是一个多网页的免费HTML5 Bootstrap婚礼网站模板。想让你的网站看起来更加浪漫吗？那么，这个模板将会是不错的选择，一定可以吸引大批的用户。优雅的设计和整体外观的简洁性让这个网站看起来非常舒服。导航明细，操作流畅，滚动布局。此外，它还包含HTML5，CSS3，jQuery，SASS和其他最新的Web开发技术。</p>
+<p>Wedding网站模板</p>
+<p><a href="https://themewagon.com/themes/free-bootstrap-weddi.." target="_blank" rel="noopener">https://themewagon.com/themes/free-bootstrap-weddi..</a>.</p>
+<p>以上就是20个很棒的Bootstra网站模板，它们对网页设计师、开发和初学者都很有用，不需要花费过多的精力就可以创建不错的网站。如果你想快速做出响应式Bootstrap网站设计，不妨尝试一下。</p>
+<p>但是，如果你还会想要自己做一个网站，也是可以的，模板可以节省很多力气，但是选对了工具也是一样。推荐你借助原型设计工具，例如Mockplus来快速完成网页模板设计。Mockplus官网上也提供了很多优秀的真实网页模板，你可以直接下载原文件，在Mockplus桌面端打开即可开始设计，也是非常方便的。</p>
+<p>更多模板资源：</p>
+<ol>
+<li>Bootstrap 4 网站模板</li>
+</ol>
+<p><a href="https://themewagon.com/themes/free-bootstrap-weddi.." target="_blank" rel="noopener">https://themewagon.com/themes/free-bootstrap-weddi..</a>.</p>
+<ol start="2">
+<li>免费的Bootstrap模板</li>
+</ol>
+<p><a href="https://themefisher.com/free-bootstrap-templates/" target="_blank" rel="noopener">https://themefisher.com/free-bootstrap-templates/</a></p>
+<ol start="3">
+<li>免费的Bootstrap模板和主题</li>
+</ol>
+<p><a href="https://gridgum.com/themes/category/free/" target="_blank" rel="noopener">https://gridgum.com/themes/category/free/</a></p>
+<ol start="4">
+<li>最佳的Bootstrap模板</li>
+</ol>
+<p><a href="https://colorlib.com/wp/cat/bootstrap/" target="_blank" rel="noopener">https://colorlib.com/wp/cat/bootstrap/</a></p>
+<ol start="5">
+<li>最全的Bootstrap模板</li>
+</ol>
+<p><a href="https://startbootstrap.com/template-categories/all/" target="_blank" rel="noopener">https://startbootstrap.com/template-categories/all/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.thimper.com/2019/02/23/markdown语法扫盲/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -808,7 +1493,7 @@
       
         
           
-            <h1 id="Git常用命令收集"><a href="#Git常用命令收集" class="headerlink" title="Git常用命令收集"></a>Git常用命令收集</h1><h2 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h2><ul>
+            <h2 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h2><ul>
 <li>git clone</li>
 <li>git clone -b branchname<br>  克隆特定分支</li>
 <li>git clone –depth depthlength<br>克隆指定深度 </li>
@@ -820,6 +1505,8 @@
 <li><p>git checkout -b branchname<br>创建并切换到分支</p>
 </li>
 </ul>
+<h2 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h2><p>   <code>git branch</code></p>
+<h2 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h2><p>   <code>git branch -r</code></p>
 
           
         
@@ -1134,416 +1821,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.thimper.com/2018/04/10/新年好/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Thimper">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Thimper : Think,Move,Persist">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/10/新年好/" itemprop="url">新年好</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T20:09:38+08:00">
-                2018-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>老当益壮</li>
-<li><p>开心每一天</p>
-<p>平常又不简单的一年过去了，崭新而又陌生的一年就来了，心中有念，一切尽在掌握中。</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.thimper.com/2018/04/10/全国行政区代码/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Thimper">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Thimper : Think,Move,Persist">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/10/全国行政区代码/" itemprop="url">全国行政区代码</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T15:25:13+08:00">
-                2018-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/其它/" itemprop="url" rel="index">
-                    <span itemprop="name">其它</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="高德接口数据"><a href="#高德接口数据" class="headerlink" title="高德接口数据"></a>高德接口数据</h2><blockquote>
-<p><a href="https://webapi.amap.com/ui/1.0/ui/geo/DistrictExplorer/assets/d_v1/an_810000.json" target="_blank" rel="noopener">https://webapi.amap.com/ui/1.0/ui/geo/DistrictExplorer/assets/d_v1/an_810000.json</a></p>
-</blockquote>
-<p> 其中 810000 为行政代码</p>
-<p> 示例返回：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">type: &quot;MultiPolygon&quot;,</span><br><span class="line">arcs:  [</span><br><span class="line">     [[ 91, 20, 92, 93, 94, 95, 96 ] ]</span><br><span class="line">     ],</span><br><span class="line">    properties:  &#123;</span><br><span class="line">       &quot;adcode&quot;: 440100,</span><br><span class="line">       &quot;name&quot;: &quot;广州市&quot;,</span><br><span class="line">       &quot;center&quot;:  [ 113.280637, 23.125178],</span><br><span class="line">       &quot;centroid&quot;:  [ 113.544343, 23.329226 ],</span><br><span class="line">       &quot;childrenNum&quot;: 11,</span><br><span class="line">       &quot;level&quot;: &quot;city&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="京东地址库"><a href="#京东地址库" class="headerlink" title="京东地址库"></a>京东地址库</h2><blockquote>
-<p><a href="https://d.jd.com/area/get?fid=40152" target="_blank" rel="noopener">https://d.jd.com/area/get?fid=40152</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.thimper.com/2018/04/10/申请阿里免费DV-SSL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Thimper">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Thimper : Think,Move,Persist">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/10/申请阿里免费DV-SSL/" itemprop="url">申请阿里免费DV SSL</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T10:48:51+08:00">
-                2018-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><h2 id="打开控制台"><a href="#打开控制台" class="headerlink" title="打开控制台"></a>打开控制台</h2><p><img src="/2018/04/10/申请阿里免费DV-SSL/ssl-1.png" alt="阿里域名控制台"></p>
-</li>
-<li><h2 id="打开申请SSL申请界面"><a href="#打开申请SSL申请界面" class="headerlink" title="打开申请SSL申请界面"></a>打开申请SSL申请界面</h2><p><img src="/2018/04/10/申请阿里免费DV-SSL/ssl-2.png" alt="阿里域名控制台"></p>
-</li>
-<li><h2 id="下载SSL"><a href="#下载SSL" class="headerlink" title="下载SSL"></a>下载SSL</h2><ul>
-<li><h3 id="打开-安全（云盾）-CA证书"><a href="#打开-安全（云盾）-CA证书" class="headerlink" title="打开 安全（云盾）- CA证书"></a>打开 安全（云盾）- CA证书</h3><p><img src="/2018/04/10/申请阿里免费DV-SSL/ssl-3.png" alt="下载证"></p>
-</li>
-<li><h3 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h3><p>阿里很细心，把各种WEB服务器配置SSL就去，有例举，拿来便事<br><img src="/2018/04/10/申请阿里免费DV-SSL/ssl-4.png" alt="阿里域名控制台"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> server &#123;</span><br><span class="line">     listen 443;</span><br><span class="line">     server_name localhost;</span><br><span class="line">     ssl on;</span><br><span class="line">     root html;</span><br><span class="line">     index index.html index.htm;</span><br><span class="line">     ssl_certificate   cert/1523284635636.pem;</span><br><span class="line">     ssl_certificate_key  cert/1523284635636.key;</span><br><span class="line">     ssl_session_timeout 5m;</span><br><span class="line">     ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">     ssl_prefer_server_ciphers on;</span><br><span class="line">     location / &#123;</span><br><span class="line">         root html;</span><br><span class="line">         index index.html index.htm;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1587,7 +1871,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1609,7 +1893,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

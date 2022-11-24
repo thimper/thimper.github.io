@@ -1,37 +1,879 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="bootstrap,网站模板," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Coming Soon  Coming Soon是一个Bootstrap 4为主题的网站模板，特别适用于着陆页的设计。该模板带有移动后备图像的视频背景，社交图标和Newsletter注册通道。该模板完全免费，且适应所有主流浏览器和平台。 Coming Soon网站模板  https:&#x2F;&#x2F;github.com&#x2F;BlackrockDigital&#x2F;startbootstrap-coming-soon&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BootStrap 模板收藏">
+<meta property="og:url" content="http://www.thimper.com/2019/02/26/BootStrap-%E6%A8%A1%E6%9D%BF%E6%94%B6%E8%97%8F/index.html">
+<meta property="og:site_name" content="Thimper : Think,Move,Persist">
+<meta property="og:description" content="Coming Soon  Coming Soon是一个Bootstrap 4为主题的网站模板，特别适用于着陆页的设计。该模板带有移动后备图像的视频背景，社交图标和Newsletter注册通道。该模板完全免费，且适应所有主流浏览器和平台。 Coming Soon网站模板  https:&#x2F;&#x2F;github.com&#x2F;BlackrockDigital&#x2F;startbootstrap-coming-soon&#x2F;">
+<meta property="og:locale">
+<meta property="og:image" content="https://camo.githubusercontent.com/04775cda09cf81f5423ce4fea3fbe6f394461110/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f636f6d696e672d736f6f6e2e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/208b18c3ae429c0655b9fd86444b29b0ebc0213b/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f63726561746976652e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/27dab02e5e5a5db51fa52a0719e35a466c9109e7/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f726573756d652e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/ee9d9ab30ec743515d869feaaa4bfb672ca7c75d/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f636c65616e2d626c6f672e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/3b8f9f5b073f742ba6c21b137ad60e78078217e8/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f7374796c6973682d706f7274666f6c696f2e706e67">
+<meta property="article:published_time" content="2019-02-26T07:09:23.000Z">
+<meta property="article:modified_time" content="2022-11-24T16:25:29.815Z">
+<meta property="article:author" content="Thimper">
+<meta property="article:tag" content="bootstrap">
+<meta property="article:tag" content="网站模板">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/04775cda09cf81f5423ce4fea3fbe6f394461110/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f636f6d696e672d736f6f6e2e706e67">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.thimper.com/2019/02/26/BootStrap-模板收藏/"/>
+
+
+
+
+
+  <title>BootStrap 模板收藏 | Thimper : Think,Move,Persist</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1b5bacec6f9cefb04842324e21a833da";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Thimper : Think,Move,Persist</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.thimper.com/2019/02/26/BootStrap-%E6%A8%A1%E6%9D%BF%E6%94%B6%E8%97%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Thimper : Think,Move,Persist">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">BootStrap 模板收藏</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T15:09:23+08:00">
+                2019-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li>Coming Soon</li>
+</ol>
+<p>Coming Soon是一个Bootstrap 4为主题的网站模板，特别适用于着陆页的设计。该模板带有移动后备图像的视频背景，社交图标和Newsletter注册通道。该模板完全免费，且适应所有主流浏览器和平台。</p>
+<p>Coming Soon网站模板</p>
+<p><img src="https://camo.githubusercontent.com/04775cda09cf81f5423ce4fea3fbe6f394461110/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f636f6d696e672d736f6f6e2e706e67"></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/BlackrockDigital/startbootstrap-coming-soon/archive/gh-pages.zip">https://github.com/BlackrockDigital/startbootstrap-coming-soon/archive/gh-pages.zip</a></p>
+<ol start="2">
+<li>Creative</li>
+</ol>
+<p>Creative是一个响应式小型企业网站设计的bootstrap模板。该模板是一个轻量级的单页模板，具有麻省理工学院许可证。该模板具有自定义导航菜单、滚动动画、自定义按钮样式、丰富插件等等。</p>
+<p>Creative网站模板<br><img src="https://camo.githubusercontent.com/208b18c3ae429c0655b9fd86444b29b0ebc0213b/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f63726561746976652e706e67"><br><a target="_blank" rel="noopener" href="https://github.com/BlackrockDigital/startbootstrap-creative/archive/gh-pages.zip">https://github.com/BlackrockDigital/startbootstrap-creative/archive/gh-pages.zip</a></p>
+<ol start="3">
+<li>Resume</li>
+</ol>
+<p>Resume如其名字所示，是一个适用于个人简历&#x2F;网站设计的bootstrap 4网站模板。该模板简洁、优雅，非常具有设计感，带有滚动页面锚点的固定侧面导航，并且是完全响应式的，使用它来搭建个人网站，可以让你的访客眼前一亮。</p>
+<p>Resume网站模板<br><img src="https://camo.githubusercontent.com/27dab02e5e5a5db51fa52a0719e35a466c9109e7/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f726573756d652e706e67"><br>免费下载：https：&#x2F;&#x2F;github.com&#x2F;BlackrockDigital&#x2F;startbootstrap-resume&#x2F;archive&#x2F;gh-pages.zip</p>
+<ol start="4">
+<li>Clean blog</li>
+</ol>
+<p>Clean blog是一个干净简洁的Bootstrap博客主题网站模板。该模板有4个HTML页面，包括博客索引，关于页面，示例博文和联系页面。具有现代设计，带有易于定制的色彩，还提供了免费博客文本，优化了向上滚动时显示菜单栏界面的设计，提高易读性。该模板还提供了社交链接和版权信息。</p>
+<p>Clean blog网站博客<br><img src="https://camo.githubusercontent.com/ee9d9ab30ec743515d869feaaa4bfb672ca7c75d/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f636c65616e2d626c6f672e706e67"><br>免费下载：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/BlackrockDigital/startbootstrap-clean-blog/archive/gh-pages.zip">https://github.com/BlackrockDigital/startbootstrap-clean-blog/archive/gh-pages.zip</a></p>
+<ol start="5">
+<li>Stylish Portfolio</li>
+</ol>
+<p>Stylish Portfolio是一款时尚的单页Bootstrap作品集网站模板，带有画布导航和流畅的页面滚动功能，用户体验极佳。该模板的自定义设计非常人性化，你可以根据需要自己设计，它具有两种自定义按钮样式，带有Font Awesome图标和作品集设计的图像网格等。</p>
+<p>Stylish Portfolio网站模板<br><img src="https://camo.githubusercontent.com/3b8f9f5b073f742ba6c21b137ad60e78078217e8/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f73637265656e73686f74732f7468656d65732f7374796c6973682d706f7274666f6c696f2e706e67"><br>免费下载：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/BlackrockDigital/startbootstrap">https://github.com/BlackrockDigital/startbootstrap</a>…</p>
+<ol start="6">
+<li>Modern Business</li>
+</ol>
+<p>Modern Business一个多用途的完整网站模板框架，用于构建Bootstrap 4网站，它包含17个HTML页面和1个可用的PHP联系表单。页面包含: 4个作品集展示页面、定价表，侧栏页面，FAQ页面，404页面和空白全宽页面等。你还可以自定义CTA以及其他界面布局和界面元素。</p>
+<p>Modern Business网站模板</p>
+<p>免费下载：</p>
+<p>https：&#x2F;&#x2F;github.com&#x2F;BlackrockDigital&#x2F;startbootstrap-modern-business&#x2F;archive&#x2F;gh-pages.zip</p>
+<ol start="7">
+<li>Groovin</li>
+</ol>
+<p>Groovin是一个基于HTML 5的完全响应式的网站模板，发布于2018年7月10日，可适用于多种类型的网站搭建。该模板是一个单页的网站模板，但内容丰富，包含4个栏目分类，该模板作者具有专业的认定许可。</p>
+<p>智能标注、一键切图、交互原型，摹客iDoc一次搞定</p>
+<p>立即体验</p>
+<p>Groovin网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://www.free-css.com/assets/files/free-css-templates/download/page230/groovin.zip">https://www.free-css.com/assets/files/free-css-templates/download/page230/groovin.zip</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.free-css.com/free-css-templates/page23">https://www.free-css.com/free-css-templates/page23</a>…</p>
+<ol start="8">
+<li>Charity</li>
+</ol>
+<p>该模板发布日期为2018年6月，是一个比较新的模板。如果你计划创建一个非盈利组织的网站，那么Charity会是一个不错的选择。这是一个免费的HTML网站模板，现代，干净，易于使用且高度适应各种浏览器，你可以快速，轻松地构建筹款、照片墙、博客等页面。</p>
+<p>Charity网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://colorlib.com/download/1230/">https://colorlib.com/download/1230/</a></p>
+<ol start="9">
+<li>Sublime</li>
+</ol>
+<p>Sublime发行于2018年5月，具有专业许可证：CC BY 3.0。该模板是一个免费的最小量的电子商务网站模板，你可以在这里建立自己的商铺，比如销售小工具，家具，服装，配饰等，该模板都非常适合。使用该模板建立在线商店，能提供给用户的很棒的体验，相信使用更该模板，发布后不久就你就会迎来首批订单。</p>
+<p> Sublime网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://colorlib.com/download/1122/">https://colorlib.com/download/1122/</a></p>
+<ol start="10">
+<li>Royal</li>
+</ol>
+<p>Royal是一个自带预订表格的免费Bootstrap酒店设计网站模板。该模板是完全基于功能强大且流行的Bootstrap框架建立的，完全响应式。该模板自定义功能强大，使用和修改都很简单。该模板最大的优点是有方便预订联系的表格，可以很好地吸引用户，将他们引入你的网站，以便潜在客户快速采取行动。</p>
+<p>Royal网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://themewagon.com/themes/free-bootstrap-hotel-template/">https://themewagon.com/themes/free-bootstrap-hotel-template/</a></p>
+<ol start="11">
+<li>Unapp</li>
+</ol>
+<p>Unapp是一个免费的商业应用程序网站模板，你可以将你的大项目在这里与大众分享。该模板发布于2018年6月，紧跟最新技术和设计，是开始你商业计划一个不错的选择。要真正做出成功的产品，创建一个网站是必要的过程。该模板还有一个专门的博客板块，用于进行内容营销，甚至可以通过在线商店扩展你的网站。</p>
+<p>Unapp网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://colorlib.com/download/1059/">https://colorlib.com/download/1059/</a></p>
+<ol start="12">
+<li>Essence</li>
+</ol>
+<p>Essence是一个简洁干净的电子商务网站模板。最适合销售男女时装，配饰，箱包，鞋子，眼镜等时尚单品。如果你是要建立一个自己的网上商店，可以看看这个模板。该模板设计用心，从超级精美的主页到商店、产品和结账，可以为你的顾客提供绝佳的购物体验。</p>
+<p>Essence网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://colorlib.com/download/1023/">https://colorlib.com/download/1023/</a></p>
+<ol start="13">
+<li>Personal</li>
+</ol>
+<p>Personal是一个免费的个人作品集展示网站模板，特别适合那些想要更多东西的创意人才使用。它基于流行的Bootstrap框架搭建，最大限度的确保了网站的灵活性和稳定性。该模板具有个性化的功能，有动画统计数据，设计精妙的作品集展示、推荐书滑块和定价表，还有不错的博客页面。</p>
+<p>Personal网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://colorlib.com/download/997/">https://colorlib.com/download/997/</a></p>
+<ol start="14">
+<li>Stuff</li>
+</ol>
+<p>Stuff是一个免费的HTML5多页面网站模板，如果你想要建立一个以内容为中心的Bootstrap博客主题网站，那么该模板会是不错的选择。该模板设计者很关注细节，文字和视觉效果都做到最优，你的博客可以以干净，直接的方式在线显示，你的读者一定会喜欢。</p>
+<p>Stuff网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://colorlib.com/download/885/">https://colorlib.com/download/885/</a></p>
+<ol start="15">
+<li>Sierra</li>
+</ol>
+<p>Sierra是一个免费的Bootstrap网站模板，发布于2018年3月。该模板适用于小型企业建立自己的网站，可以为你的产品和项目提供支持。该模板也是完全自适应的，做了不错的优化工作，跨浏览器。提升加载速度，具有一流的性能和不错的用户体验。</p>
+<p> Sierra网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://colorlib.com/download/755/">https://colorlib.com/download/755/</a></p>
+<ol start="16">
+<li>Sonar</li>
+</ol>
+<p>Sonar是一个自定义的免费HTML5摄影网站模板。该模板是基于Bootstrap 4，具有规范的设计和精美的图片，是一个看起来非常美观的网站。</p>
+<p>Sonar网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://themewagon.com/themes/free-html5-photograp">https://themewagon.com/themes/free-html5-photograp</a>…</p>
+<ol start="17">
+<li>Ezuca</li>
+</ol>
+<p>Ezuca是一个非常具有现代感的免费HTML5教育网站模板，该模板也是完全免费的。该模板最大的特色就是不像平常的教育网站那么正式，它是具有现代感的，很时尚。</p>
+<p>Ezuca网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://themewagon.com/themes/free-html5-education-template/">https://themewagon.com/themes/free-html5-education-template/</a></p>
+<ol start="18">
+<li>Original</li>
+</ol>
+<p>Original是一个轻量级的免费的HTML5 博客网站模板。该模板框架精美，设计新颖，你可以使用它建立一个美观与功能俱佳的网站。</p>
+<p>Original网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://themewagon.com/themes/free-bootstrap-blog-website-template/">https://themewagon.com/themes/free-bootstrap-blog-website-template/</a></p>
+<ol start="19">
+<li>Sports</li>
+</ol>
+<p>Sports是一个免费的HTML5 Bootstrap运动类型的网站模板。从远古时代起，人们就会通过不同类型的游戏来娱乐，运动类的网站一定要具有吸引力，才可以成功吸引用户。Sports不仅是一款免费的Bootstrap运动模板，也适用于多功能游戏网站，提供有关游戏和体育的必要信息。</p>
+<p>Sports网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://themewagon.com/themes/multi-page-free-bootstrap-sports-template/">https://themewagon.com/themes/multi-page-free-bootstrap-sports-template/</a></p>
+<ol start="20">
+<li>Wedding</li>
+</ol>
+<p>Wedding是一个多网页的免费HTML5 Bootstrap婚礼网站模板。想让你的网站看起来更加浪漫吗？那么，这个模板将会是不错的选择，一定可以吸引大批的用户。优雅的设计和整体外观的简洁性让这个网站看起来非常舒服。导航明细，操作流畅，滚动布局。此外，它还包含HTML5，CSS3，jQuery，SASS和其他最新的Web开发技术。</p>
+<p>Wedding网站模板</p>
+<p><a target="_blank" rel="noopener" href="https://themewagon.com/themes/free-bootstrap-weddi">https://themewagon.com/themes/free-bootstrap-weddi</a>…</p>
+<p>以上就是20个很棒的Bootstra网站模板，它们对网页设计师、开发和初学者都很有用，不需要花费过多的精力就可以创建不错的网站。如果你想快速做出响应式Bootstrap网站设计，不妨尝试一下。</p>
+<p>但是，如果你还会想要自己做一个网站，也是可以的，模板可以节省很多力气，但是选对了工具也是一样。推荐你借助原型设计工具，例如Mockplus来快速完成网页模板设计。Mockplus官网上也提供了很多优秀的真实网页模板，你可以直接下载原文件，在Mockplus桌面端打开即可开始设计，也是非常方便的。</p>
+<p>更多模板资源：</p>
+<ol>
+<li>Bootstrap 4 网站模板</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://themewagon.com/themes/free-bootstrap-weddi">https://themewagon.com/themes/free-bootstrap-weddi</a>…</p>
+<ol start="2">
+<li>免费的Bootstrap模板</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://themefisher.com/free-bootstrap-templates/">https://themefisher.com/free-bootstrap-templates/</a></p>
+<ol start="3">
+<li>免费的Bootstrap模板和主题</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://gridgum.com/themes/category/free/">https://gridgum.com/themes/category/free/</a></p>
+<ol start="4">
+<li>最佳的Bootstrap模板</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://colorlib.com/wp/cat/bootstrap/">https://colorlib.com/wp/cat/bootstrap/</a></p>
+<ol start="5">
+<li>最全的Bootstrap模板</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://startbootstrap.com/template-categories/all/">https://startbootstrap.com/template-categories/all/</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/bootstrap/" rel="tag"># bootstrap</a>
+          
+            <a href="/tags/%E7%BD%91%E7%AB%99%E6%A8%A1%E6%9D%BF/" rel="tag"># 网站模板</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/23/markdown%E8%AF%AD%E6%B3%95%E6%89%AB%E7%9B%B2/" rel="next" title="markdown语法扫盲">
+                <i class="fa fa-chevron-left"></i> markdown语法扫盲
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/26/Git-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" rel="prev" title="Git 常用操作">
+                Git 常用操作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/thimper" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thimper</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
